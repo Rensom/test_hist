@@ -1,0 +1,48 @@
+##VM section
+machine:
+  timezone: Europe/Chisinau
+  elixir:
+    version: 1.4
+  environment:
+    CIRCLE_ENV: dev
+
+## Customize checkout
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init # use submodules
+
+## Customize dependencies
+dependencies:
+  pre:
+    - 
+  override:
+    - 
+  cache_directories:
+    - 
+
+## Override DB connection string  
+database:
+  # replace CircleCI's generated database.yml
+  override:
+    - 
+
+## Customize test commands
+test:
+  override:
+    - 
+  post:
+    - 
+
+## Customize deployment commands
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: 
+
+## Custom notifications
+notify:
+  webhooks:
+    # A list of hashes representing hooks. Only the url field is supported.
+    - url: https://someurl.com/hooks/circle
