@@ -20,6 +20,9 @@ defmodule ExpertApi.Mixfile do
                       :gettext, :cowboy, :mongodb, :poolboy]]
   end
 
+  defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
+  defp elixirc_paths(_),     do: ["lib", "web"]
+
   defp deps do
     [
       {:phoenix, "~> 1.2.4"},
