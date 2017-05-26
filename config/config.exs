@@ -8,14 +8,17 @@ config  :logger,
 config  :logger, :error_log,
     path:   "./log/error.log",
     level:  :error,
-    metadata:    ...
+    metadata:   ...,
+    foramt: "$time ---- !!!ERROR!!! ----  $message\n"
 
 config  :logger, :warn_log,
     path:   "./log/warning.log",
     level:  :warn,
-    metadata:   ...
+    metadata:   ...,
+    format: "$time - $metadata[$level] - $message\n"
 
 config  :logger, :info_log,
     path:   "./log/info.log",
     level:  :info
-    metadata:   ...
+    metadata:   ...,
+    format: "$time - $metadata[$level] - $message\n"
